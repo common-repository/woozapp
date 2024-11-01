@@ -1,0 +1,71 @@
+//
+// Base Form
+//
+.woozapp-wrapper {
+  // We want to customize the placeholder.
+  // scss-lint:disable VendorPrefix
+  *:-ms-input-placeholder,
+  *::-webkit-input-placeholder,
+  *::-moz-placeholder {
+    color: $color-input;
+  }
+
+  label {
+    color:          $color-label;
+    display:        inline-block;
+    font-weight:    $font-weight--bold;
+    margin-right:   .75em;
+    text-transform: uppercase;
+  }
+
+  input[type="email"],
+  input[type="file"],
+  input[type="password"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="text"],
+  textarea {
+    display:    block;
+    font-size:  $global-font-size;
+    margin-top: .8em;
+    width:      100%;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="text"],
+  textarea {
+    border:        1px solid $color-border;
+    border-radius: $border-radius-input;
+    color:         $color-input;
+    padding:       .73rem 1rem;
+    transition:    all $global-transition-timing ease-in-out;
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow:   none;
+      color:        $color-text;
+      outline:      none;
+    }
+
+    &.invalid,
+    &.invalid:focus,
+    &:invalid:focus {
+      border-color: $color-red;
+    }
+
+    &.valid:focus,
+    &:valid:focus {
+      border-color: $color-success;
+    }
+  }
+
+  // Be sure to use the correct cursor.
+  // sass-lint:disable QualifyingElement
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+  }
+}

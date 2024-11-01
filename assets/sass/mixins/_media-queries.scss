@@ -1,0 +1,41 @@
+//
+// Media Queries
+//
+// - SmartPhone
+// - Phablet
+// - Tablet
+// - Small Desktop
+// - Desktop
+// - Large Desktop
+// - Landscape
+// - Portrait
+//
+@mixin -woozapp-device($device : 'smartphone', $max : false, $orientation : false) {
+
+  $_media: '';
+
+  @if 'phablet' == $device {
+    $_media: '(min-width : 40em)'; // 640px
+  } @else if 'tablet' == $device {
+    $_media: '(min-width : 48em)'; // 768px
+  } @else if 'small-desktop' == $device {
+    $_media: '(min-width : 64em)'; // 1024px
+  } @else if 'desktop' == $device {
+    $_media: '(min-width : 80em)'; // 1280px
+  } @else if 'large-desktop' == $device {
+    $_media: '(min-width : 90em)'; // 1440px
+  } @else {
+    $_media: '(max-width : 39.9375em)';
+  }
+
+  // Add max width if passed.
+  $_media: if('smartphone' != $device, '#{$_media}', $_media);
+  $_media: if($max != false, '#{$_media} and (max-width: #{$max})', $_media);
+
+  // Add orientation if passed.
+  $_media: if($orientation, '#{$_media} and (orientation : #{$orientation})', $_media);
+
+  @media only screen and #{$_media} {
+    @content;
+  }
+}

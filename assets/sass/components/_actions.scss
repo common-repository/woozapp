@@ -1,0 +1,66 @@
+//
+// Actions
+//
+.woozapp-wrapper {
+
+  .woozapp-actions {
+    margin-top: 2.06em;
+  }
+}
+
+@media only screen and (max-width: 63.94em) {
+
+  .woozapp-wrapper {
+
+    .woozapp-actions {
+      text-align: center;
+
+      a {
+        margin-bottom: 1.63em;
+      }
+
+      a,
+      input {
+        display: block;
+        width:   100%;
+      }
+
+      a + a,
+      input + a {
+        margin-bottom: 0; // Reset the above margin.
+        margin-top:    1.63em;
+      }
+    }
+  }
+}
+
+@include -woozapp-device('desktop') {
+
+  .woozapp-wrapper {
+
+    .woozapp-actions {
+
+      a,
+      input {
+        font-size: 1.25rem !important;
+      }
+    }
+  }
+}
+
+@include -woozapp-device('small-desktop') {
+
+  .woozapp-wrapper {
+
+    a:not(.woozapp-btn),
+    input {
+      margin-right: 2.5rem;
+    }
+
+    a + a,
+    input + a {
+      display:     inline-block;
+      margin-left: 2.5rem;
+    }
+  }
+}

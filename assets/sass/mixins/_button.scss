@@ -1,0 +1,48 @@
+@mixin -woozapp-button($type : 'normal') {
+
+  // Get the button properties.
+  $_type: $type;
+  @if 'string' == type-of($_type) {
+    $_type: map-get($btn-sizes, $_type);
+  }
+
+  // Set the bg
+  $_bg-color: if(map-has-key($_type, 'backgroundcolor'), map-get($_type, 'backgroundcolor'), $color-primary);
+
+  //font-family      : if(map-has-key($_type, 'fontfamily'), map-get($_type, 'fontfamily'), $font-family--bold);
+  font-size:        if(map-has-key($_type, 'fontsize'), map-get($_type, 'fontsize'), $global-font-size);
+  font-weight:      normal;
+  text-align:       center;
+  color:            if(map-has-key($_type, 'color'), map-get($_type, 'color'), $color-white);
+  //border           : if(map-has-key($_type, 'border'), unquote(map-get($_type, 'border')), $global-border);
+  //border-color     : if(map-has-key($_type, 'bordercolor'), unquote(map-get($_type, 'border' color)), darken($color-primary, 10%));
+  border-radius:    if(map-has-key($_type, 'border-radius'), map-get($_type, 'border-radius'), $border-radius-input);
+  background-color: $_bg-color;
+  padding:          if(map-has-key($_type, 'padding'), map-get($_type, 'padding'), $btn-padding);
+  transition:       $global-transition-timing;
+  cursor:           pointer;
+  display:          inline-block;
+
+  @if map-has-key($_type, 'bordercolor') {
+    border-color: unquote(map-get($_type, 'border' color));
+  } @else {
+    border-color: transparent;
+  }
+
+  @if map-has-key($_type, 'ghost') {
+    background-color: transparent;
+    border:           unquote(map-get($_type, 'border'));
+    box-shadow:       none;
+  }
+
+  &:focus,
+  &:hover {
+    background: $color-red;
+    @if map-has-key($_type, 'ghost') {
+      background: $_bg-color;
+      color:      map-get(map-get($_type, 'ghost'), 'color');
+    } @else {
+      box-shadow: $global-box-shadow;
+    }
+  }
+}

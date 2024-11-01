@@ -1,0 +1,19 @@
+//
+// Base Typography
+//
+.woozapp-wrapper {
+  color:     $color-text;
+  font-size: $global-font-size;
+
+  *:focus {
+    outline: none;
+  }
+
+  a {
+    color: $color-text;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

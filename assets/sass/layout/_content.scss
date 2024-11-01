@@ -1,0 +1,65 @@
+//
+// Layout Content
+//
+.woozapp-wrapper {
+
+  .woozapp-content {
+
+    &__title {
+      font-size:     1.8rem;
+      line-height:   1;
+      margin-bottom: 0;
+    }
+
+    .woozapp-thumbnail {
+      display:   block;
+      margin:    0 auto;
+      max-width: 410px;
+      width:     100%;
+    }
+
+    .u-text--big {
+      color: $color-black;
+
+      a:not(.woozapp-btn) {
+        color: $color-black;
+      }
+
+      a + span {
+        margin: 1.75rem;
+      }
+    }
+  }
+
+  .main-content {
+    background: $color-background;
+    border:     1px solid $color-border;
+    padding:    1.5rem;
+  }
+}
+
+@include -woozapp-device('tablet') {
+
+  .woozapp-wrapper {
+
+    .woozapp-content {
+      bottom:   28px;
+      position: relative;
+    }
+
+    .main-content {
+      flex-grow: 1;
+    }
+  }
+}
+
+@include -woozapp-device('small-desktop') {
+
+  .woozapp-wrapper {
+
+    .main-content {
+      padding:  2.2em;
+      position: relative;
+    }
+  }
+}

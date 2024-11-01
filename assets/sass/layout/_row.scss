@@ -1,0 +1,10 @@
+//
+// Layout Row
+//
+@include -woozapp-device('tablet') {
+
+  .row {
+    align-items: center;
+    display:     flex;
+  }
+}

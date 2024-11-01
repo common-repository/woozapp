@@ -1,0 +1,26 @@
+//
+// Buttons
+//
+.woozapp-wrapper {
+  .woozapp-btn {
+    // Be sure the decoration is off.
+    // scss-lint:disable ImportantRule
+    text-decoration: none !important;
+  }
+
+  .woozapp-btn--small {
+    @include -woozapp-button('small');
+  }
+
+  .woozapp-btn--normal {
+    @include -woozapp-button;
+  }
+
+  .woozapp-btn--medium {
+    @include -woozapp-button('medium');
+  }
+
+  .woozapp-btn--large {
+    @include -woozapp-button('large');
+  }
+}

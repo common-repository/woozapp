@@ -1,0 +1,14 @@
+//
+// Settings Box-Model
+//
+
+// Border
+$global-border: 1px solid $color-border;
+$global-border-radius: .13em;
+
+// Border Radius.
+$border-radius-input: .2em;
+
+// Box Shadow
+$global-box-shadow: 0 1px 2px transparentize($color-gray, .65);
+$input-box-shadow: 0 2px 0 $color-primary;

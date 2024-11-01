@@ -1,0 +1,27 @@
+{
+  "name": "woozapp",
+  "version": "1.0.0",
+  "description": "Woozapp is the best plugin to Build Real-time mobile Apps for any WordPress Website.",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "android",
+    "mobile",
+    "wordpress",
+    "app",
+    "push",
+    "notification"
+  ],
+  "author": "Woozapp",
+  "license": "GPL-2.0",
+  "homepage": "https://www.woozapp.com",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-postcss": "^0.8.0",
+    "grunt-svgmin": "^3.3.0",
+    "postcss-flexibility": "^1.1.0",
+    "svgmin": "^0.1.0",
+    "uglify": "^0.1.5"
+  }
+}

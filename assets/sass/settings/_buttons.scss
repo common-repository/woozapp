@@ -1,0 +1,21 @@
+//
+// Settings Buttons
+//
+$btn-padding: .667em 2em;
+$btn-sizes: (
+              small : (
+                fontsize : 1rem,
+                padding : .475em 1.25em .5875em
+              ),
+              normal : (
+                fontsize : $global-font-size
+              ),
+              medium : (
+                fontsize : 1.125rem,
+                padding : .975em 2.75em 1.1875em
+              ),
+              large : (
+                fontsize : $global-font-size * 2,
+                padding : .975em 2.95em 1.1875em
+              )
+            );

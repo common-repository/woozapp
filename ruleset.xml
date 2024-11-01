@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress PSR">
+	<description>Best practices beyond core WordPress Coding Standards and PSR</description>
+
+	<rule ref="PSR2"/>
+
+	<rule ref="Generic.PHP.DeprecatedFunctions"/>
+	<rule ref="Generic.PHP.ForbiddenFunctions"/>
+	<rule ref="Generic.Functions.CallTimePassByReference"/>
+	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+	<rule ref="Generic.CodeAnalysis.EmptyStatement" />
+	<rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+	<rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+	<rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+	<rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+	<rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+	<rule ref="Generic.Classes.DuplicateClassName"/>
+	<rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+	<!-- http://make.wordpress.org/core/handbook/coding-standards/php/#remove-trailing-spaces -->
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+	<rule ref="WordPress.XSS.EscapeOutput"/>
+	<rule ref="WordPress.CSRF.NonceVerification" />
+	<rule ref="WordPress.PHP.DiscouragedFunctions"/>
+	<rule ref="WordPress.WP.EnqueuedResources"/>
+	<rule ref="WordPress.WP.PreparedSQL"/>
+	<rule ref="WordPress.Variables.GlobalVariables"/>
+	<rule ref="WordPress.PHP.StrictComparisons" />
+
+	<!-- https://vip.wordpress.com/documentation/code-review-what-we-look-for/#using-in_array-without-strict-parameter -->
+	<rule ref="WordPress.PHP.StrictInArray" />
+</ruleset>

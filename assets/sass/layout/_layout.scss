@@ -1,0 +1,53 @@
+//
+// Layout
+//
+// The main layout.
+// To overwrite the default properties within the WordPress admin
+// we had wrapped the entire content of the page into .woozapp-wrapper
+//
+[class*="woozapp_page"],
+[class*="toplevel_page_woozapp"] {
+  // No other selector found.
+  // scss-lint:disable IdSelector
+  #wpcontent {
+    // Add padding right to the WordPress content wrapper.
+    // WordPress has only the padding left.
+    padding-right: 10px;
+  }
+}
+
+.woozapp-wrapper {
+  font-family:             $global-font-family;
+  // Override the default WordPress font size.
+  // scss-lint:disable ImportantRule
+  font-size:               $global-font-size !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:  antialiased;
+  text-rendering:          optimizeLegibility;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    line-height:    1;
+    text-transform: uppercase;
+
+    span {
+      color:          $color-gray--dark;
+      text-transform: initial;
+    }
+  }
+}
+
+@include -woozapp-device('tablet') {
+
+  .woozapp-wrapper {
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}

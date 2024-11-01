@@ -1,0 +1,121 @@
+//
+// Layout Form
+//
+.woozapp-wrapper {
+
+  form {
+    // Fields
+    .woozapp-field {
+      position: relative;
+
+      &-submit {
+        word-break: break-word;
+      }
+
+      // Types
+      &__type {
+        margin-bottom: 0;
+
+        &--text {
+          appearance:         none;
+          background:         transparent;
+          border:             0;
+          color:              $color-black;
+          font-weight:        $font-weight--bold;
+          text-decoration:    underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .woozapp-field-invalid-desc {
+        color:      $color-error;
+        font-size:  .85rem;
+        left:       0;
+        margin-top: .63em;
+        position:   absolute;
+        right:      0;
+        top:        90%;
+      }
+    }
+
+    .woozapp-field label + span {
+      color:       $color-gray--light;
+      font-weight: $font-weight--bold;
+      position:    relative;
+      top:         2px;
+    }
+
+    .woozapp-field + .woozapp-field {
+      margin-top: 1.63em;
+    }
+
+    .file-type-wrapper,
+    .file-type-wrapper::after,
+    .file-type-wrapper input {
+      cursor: pointer;
+    }
+
+    .file-type-wrapper {
+      border:        1px solid $color-border;
+      border-radius: $border-radius-input;
+      margin-top:    .8em; // From base form style.
+      padding:       .73rem 1rem; // From the base form style.
+      position:      relative;
+      z-index:       2;
+
+      &:hover::after {
+        background: $color-red;
+      }
+
+      &::after {
+        align-items:                center;
+        background:                 $color-primary;
+        border-bottom-right-radius: $border-radius-input;
+        border-top-right-radius:    $border-radius-input;
+        bottom:                     0;
+        color:                      $color-white;
+        content:                    'browse';
+        display:                    flex;
+        padding:                    $btn-padding;
+        position:                   absolute;
+        right:                      0;
+        top:                        0;
+        transition:                 all $global-transition-timing;
+        z-index:                    -1;
+      }
+
+      input {
+        margin:  0;
+        opacity: 0;
+        padding: 0;
+      }
+
+      .filename {
+        position: absolute;
+        top:      28%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 63.94em) {
+
+  .file-type-wrapper {
+    .filename {
+      font-size: .94rem;
+      max-width: 45%;
+    }
+  }
+}
+
+@include -woozapp-device('small-desktop') {
+
+  .woozapp-wrapper {
+    form .woozapp-field-submit {
+      text-align: right;
+    }
+  }
+}
